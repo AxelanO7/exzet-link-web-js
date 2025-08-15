@@ -19,6 +19,7 @@
     "lucide-react": "^0.427.0",
     "next": "14.2.5",
     "next-themes": "^0.3.0",
+    "or": "^0.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.5.2"
@@ -36,24 +37,5 @@
   },
   "engines": {
     "node": ">=18.17.0"
-  },
-  "keywords": [
-    "nextjs",
-    "typescript",
-    "heroui",
-    "framer-motion",
-    "link-in-bio",
-    "portfolio",
-    "tech-enthusiast"
-  ],
-  "author": {
-    "name": "Jeremia Axelano",
-    "email": "jeremia@exzet.site",
-    "url": "https://link.exzet.site"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/AxelanO7/exzet-link.git"
-  },
-  "homepage": "https://link.exzet.site"
+  }
 }
