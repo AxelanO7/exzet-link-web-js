@@ -1,5 +1,5 @@
 export const techStack = [
-  // Frontend
+  // Frontend & Mobile
   { name: "React", color: "#61DAFB" },
   { name: "Next.js", color: "#000000" },
   { name: "Vue.js", color: "#4FC08D" },
@@ -25,17 +25,17 @@ export const techStack = [
   { name: "C++", color: "#00599C" },
   { name: "C#", color: "#239120" },
 
-  // DevOps
+  // DevOps & Cloud
   { name: "Docker", color: "#2496ED" },
   { name: "AWS", color: "#FF9900" },
   { name: "CI/CD", color: "#6C5CE7" },
   { name: "VPS", color: "#FF6B35" },
 
-  // AI
+  // AI & Automation
   { name: "n8n", color: "#EA4B71" },
   { name: "Chatbot", color: "#00D4FF" },
 
-  // Tools
+  // Tools & Platforms
   { name: "Git", color: "#F05032" },
   { name: "ClickUp", color: "#0052CC" },
   { name: "Linux", color: "#FCC624" },
