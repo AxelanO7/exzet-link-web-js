@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Chip } from "@nextui-org/react";
+import { Chip } from "@heroui/react";
 import { techStack } from "@/config/tech-stack";
 
 const containerVariants = {

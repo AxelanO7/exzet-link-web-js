@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Avatar } from "@nextui-org/react";
+import { Avatar } from "@heroui/react";
 import { TypingAnimation } from "@/components/animations/typing-animation";
 import { roles } from "@/config/tech-stack";
 
