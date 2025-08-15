@@ -55,7 +55,7 @@ export function TechStack() {
         animate="visible"
         className="flex flex-wrap justify-center gap-3"
       >
-        {techStack.map((tech, index) => (
+        {techStack.map((tech) => (
           <motion.div
             key={tech.name}
             variants={itemVariants}
@@ -114,8 +114,8 @@ export function TechStack() {
         className="text-center"
       >
         <blockquote className="text-lg italic text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          "Technology is a tool in service of humanity. Let's build something
-          meaningful together."
+          &quot;Technology is a tool in service of humanity. Let&apos;s build
+          something meaningful together.&quot;
         </blockquote>
         <motion.div
           className="mt-4 w-8 h-0.5 bg-blue-500 mx-auto"

@@ -65,75 +65,76 @@ export function LinksSection() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <motion.div
+              <Card
+                className={`
+                  group transition-all duration-300 
+                  bg-white/80 dark:bg-slate-800/80 
+                  backdrop-blur-md border-0
+                  hover:bg-white dark:hover:bg-slate-800
+                  hover:shadow-xl hover:shadow-blue-500/20
+                  ${link.hoverColor}
+                `}
+                isPressable
+                as={motion.div}
                 whileHover={{ y: -5 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                // transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <Card
-                  className={`
-                    group transition-all duration-300 
-                    bg-white/80 dark:bg-slate-800/80 
-                    backdrop-blur-md border-0
-                    hover:bg-white dark:hover:bg-slate-800
-                    hover:shadow-xl hover:shadow-blue-500/20
-                    ${link.hoverColor}
-                  `}
-                  isPressable
-                >
-                  <CardBody className="p-0">
-                    <Button
-                      as="a"
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full h-20 bg-transparent text-left justify-start p-6 rounded-xl"
-                      startContent={
+                <CardBody className="p-0">
+                  <Button
+                    as="a"
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full h-auto min-h-[80px] bg-transparent text-left justify-between p-6 rounded-xl flex-row"
+                    startContent={
+                      <div className="flex items-center gap-4">
                         <div
                           className={`
-                        p-3 rounded-xl 
-                        bg-gradient-to-r ${link.color}
-                        text-white
-                        group-hover:scale-110 
-                        transition-transform duration-300
-                        shadow-lg
-                      `}
+                          p-3 rounded-xl 
+                          bg-gradient-to-r ${link.color}
+                          text-white
+                          group-hover:scale-110 
+                          transition-transform duration-300
+                          shadow-lg
+                          flex-shrink-0
+                        `}
                         >
                           <Icon size={24} />
                         </div>
-                      }
-                      endContent={
-                        <motion.div
-                          initial={{ x: 0, opacity: 0.5 }}
-                          whileHover={{ x: 5, opacity: 1 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <ExternalLink
-                            size={20}
-                            className="text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
-                          />
-                        </motion.div>
-                      }
-                    >
-                      <div className="flex flex-col items-start">
-                        <span className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                          {link.name}
-                        </span>
-                        <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
-                          {link.description}
-                        </span>
+                        <div className="flex flex-col items-start">
+                          <span className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            {link.name}
+                          </span>
+                          <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
+                            {link.description}
+                          </span>
+                        </div>
                       </div>
-                    </Button>
-                  </CardBody>
-                </Card>
+                    }
+                    endContent={
+                      <motion.div
+                        initial={{ x: 0, opacity: 0.5 }}
+                        whileHover={{ x: 5, opacity: 1 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                        className="flex-shrink-0"
+                      >
+                        <ExternalLink
+                          size={20}
+                          className="text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
+                        />
+                      </motion.div>
+                    }
+                  />
+                </CardBody>
+              </Card>
 
-                {/* Animated line under each card */}
-                <motion.div
-                  className="h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                />
-              </motion.div>
+              {/* Animated line under each card */}
+              <motion.div
+                className="h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={{ scaleX: 0 }}
+                whileHover={{ scaleX: 1 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              />
             </motion.div>
           );
         })}

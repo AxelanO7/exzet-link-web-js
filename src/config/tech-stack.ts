@@ -7,6 +7,8 @@ export const techStack = [
   { name: "React Native", color: "#61DAFB" },
   { name: "Flutter", color: "#02569B" },
   { name: "TypeScript", color: "#3178C6" },
+  { name: "Swift", color: "#F05138" },
+  { name: "Dart", color: "#0175C2" },
 
   // Backend
   { name: "Node.js", color: "#339933" },
@@ -23,19 +25,24 @@ export const techStack = [
   { name: "C++", color: "#00599C" },
   { name: "C#", color: "#239120" },
 
-  // Mobile, DevOps & Tools
-  { name: "Swift", color: "#F05138" },
-  { name: "Dart", color: "#0175C2" },
+  // DevOps
   { name: "Docker", color: "#2496ED" },
   { name: "AWS", color: "#FF9900" },
   { name: "CI/CD", color: "#6C5CE7" },
+  { name: "VPS", color: "#FF6B35" },
+
+  // AI
+  { name: "n8n", color: "#EA4B71" },
+  { name: "Chatbot", color: "#00D4FF" },
+
+  // Tools
   { name: "Git", color: "#F05032" },
   { name: "ClickUp", color: "#0052CC" },
   { name: "Linux", color: "#FCC624" },
   { name: "App Store Connect", color: "#007AFF" },
   { name: "Google Play Console", color: "#4285F4" },
 
-  // Databases & API
+  // Databases
   { name: "MongoDB", color: "#47A248" },
   { name: "PostgreSQL", color: "#336791" },
   { name: "MySQL", color: "#4479A1" },
