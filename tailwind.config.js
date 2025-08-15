@@ -8,6 +8,26 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
+    safelist: [
+    // Gradient colors untuk social links
+    'from-blue-500',
+    'to-cyan-500',
+    'from-blue-600', 
+    'to-blue-800',
+    'from-gray-800',
+    'to-gray-600',
+    'from-green-500',
+    'to-green-600',
+    'from-green-400',
+    'to-green-500',
+    'from-purple-500',
+    'to-purple-600',
+    'from-red-500',
+    'to-red-600',
+    'from-yellow-500',
+    'to-yellow-600',
+  ],
+
   theme: {
     extend: {
       fontFamily: {
