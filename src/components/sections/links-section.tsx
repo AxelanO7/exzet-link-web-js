@@ -53,7 +53,7 @@ export function LinksSection() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="space-y-4"
+        className="space-y-4 max-w-2xl mx-auto"
       >
         {socialLinks.map((link, index) => {
           const Icon = link.icon;
@@ -73,21 +73,24 @@ export function LinksSection() {
                   hover:bg-white dark:hover:bg-slate-800
                   hover:shadow-xl hover:shadow-blue-500/20
                   ${link.hoverColor}
+                  overflow-hidden
                 `}
                 isPressable
                 as={motion.div}
-                whileHover={{ y: -5 }}
-                // transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                whileHover={{ y: -3 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <CardBody className="p-0">
+                <CardBody className="p-6">
                   <Button
                     as="a"
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full h-auto min-h-[80px] bg-transparent text-left justify-between p-6 rounded-xl flex-row"
-                    startContent={
-                      <div className="flex items-center gap-4">
+                    className="w-full h-auto min-h-[80px] bg-transparent text-left justify-start p-0 rounded-none"
+                  >
+                    <div className="flex items-center justify-between w-full">
+                      {/* Left Content */}
+                      <div className="flex items-center gap-4 flex-1 min-w-0">
                         <div
                           className={`
                           p-3 rounded-xl 
@@ -101,30 +104,30 @@ export function LinksSection() {
                         >
                           <Icon size={24} />
                         </div>
-                        <div className="flex flex-col items-start">
-                          <span className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        <div className="flex flex-col items-start min-w-0 flex-1">
+                          <span className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate w-full">
                             {link.name}
                           </span>
-                          <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
+                          <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors text-left leading-relaxed">
                             {link.description}
                           </span>
                         </div>
                       </div>
-                    }
-                    endContent={
+
+                      {/* Right Icon */}
                       <motion.div
                         initial={{ x: 0, opacity: 0.5 }}
                         whileHover={{ x: 5, opacity: 1 }}
                         transition={{ type: "spring", stiffness: 300 }}
-                        className="flex-shrink-0"
+                        className="flex-shrink-0 ml-4"
                       >
                         <ExternalLink
                           size={20}
                           className="text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
                         />
                       </motion.div>
-                    }
-                  />
+                    </div>
+                  </Button>
                 </CardBody>
               </Card>
 
