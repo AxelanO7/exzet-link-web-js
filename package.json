@@ -1,27 +1,59 @@
 {
   "name": "exzet-link",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Modern link-in-bio page for tech enthusiasts",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.4.6"
+    "@heroui/react": "^2.4.6",
+    "@heroui/theme": "^2.2.9",
+    "@tabler/icons-react": "^3.11.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.3.28",
+    "lucide-react": "^0.427.0",
+    "next": "14.2.5",
+    "next-themes": "^0.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "15.4.6",
-    "@eslint/eslintrc": "^3"
-  }
+    "@types/node": "^20.14.15",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "keywords": [
+    "nextjs",
+    "typescript",
+    "heroui",
+    "framer-motion",
+    "link-in-bio",
+    "portfolio",
+    "tech-enthusiast"
+  ],
+  "author": {
+    "name": "Jeremia Axelano",
+    "email": "jeremia@exzet.site",
+    "url": "https://link.exzet.site"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AxelanO7/exzet-link.git"
+  },
+  "homepage": "https://link.exzet.site"
 }
