@@ -78,7 +78,7 @@ export function LinksSection() {
                 isPressable
                 as={motion.div}
                 whileHover={{ y: -3 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                // transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <CardBody className="p-6">
                   <Button
