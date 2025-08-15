@@ -1,4 +1,11 @@
-import { Github, Linkedin, Globe, Mail, MessageCircle } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Globe,
+  Mail,
+  MessageCircle,
+  MessageCircleCode,
+} from "lucide-react";
 
 export const socialLinks = [
   {
@@ -30,13 +37,13 @@ export const socialLinks = [
     href: "mailto:jeremia123.jm@gmail.com",
     icon: Mail,
     description: "Contact me via email",
-    color: "from-green-500 to-green-600",
+    color: "from-yellow-500 to-yellow-600",
     hoverColor: "hover:shadow-glow",
   },
   {
     name: "WhatsApp",
     href: "https://wa.me/082210487700",
-    icon: MessageCircle,
+    icon: MessageCircleCode,
     description: "Contact me via WhatsApp",
     color: "from-green-400 to-green-500",
     hoverColor: "hover:shadow-glow",
