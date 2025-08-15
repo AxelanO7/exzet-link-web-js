@@ -1,11 +1,4 @@
-import {
-  Github,
-  Linkedin,
-  Globe,
-  Mail,
-  MessageCircle,
-  MessageCircleCode,
-} from "lucide-react";
+import { Github, Linkedin, Globe, Mail, MessageCircleCode } from "lucide-react";
 
 export const socialLinks = [
   {
