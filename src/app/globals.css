@@ -13,43 +13,111 @@ html {
 
 body {
   font-feature-settings: "rlig" 1, "calt" 1;
+  /* Enable hardware acceleration globally */
+  transform: translate3d(0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom animations */
+/* Performance optimizations */
+* {
+  /* Reduce repaints */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+/* Optimized animations for low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom animations - optimized */
 @keyframes matrix-rain {
-  0% { transform: translateY(-100vh); opacity: 0; }
+  0% { transform: translate3d(0, -100vh, 0); opacity: 0; }
   10% { opacity: 1; }
   90% { opacity: 1; }
-  100% { transform: translateY(100vh); opacity: 0; }
+  100% { transform: translate3d(0, 100vh, 0); opacity: 0; }
 }
 
 .matrix-char {
-  animation: matrix-rain 8s linear infinite;
-  animation-delay: calc(var(--delay) * 0.1s);
+  animation: matrix-rain 10s linear infinite;
+  animation-delay: calc(var(--delay) * 0.2s);
+  /* Hardware acceleration */
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
 }
 
-/* Glassmorphism utilities */
+/* Optimized glassmorphism - reduced blur for better performance */
 .glass {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px); /* Reduced from 10px */
   border: 1px solid rgba(255, 255, 255, 0.2);
+  /* Performance optimization */
+  -webkit-backdrop-filter: blur(8px);
+  transform: translate3d(0, 0, 0);
 }
 
 .glass-dark {
   background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px); /* Reduced from 10px */
   border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translate3d(0, 0, 0);
 }
 
-/* Glow effects */
+/* Optimized glow effects - reduced intensity */
 .glow-blue {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); /* Reduced from 20px and 0.3 */
 }
 
 .glow-purple {
-  box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.2);
 }
 
 .glow-cyan {
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+}
+
+/* Performance utilities */
+.gpu-accelerated {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.prevent-layout-shift {
+  contain: layout style paint;
+}
+
+/* Optimized scrolling for mobile */
+.smooth-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Reduce expensive operations on mobile */
+@media screen and (max-width: 768px) {
+  .glass,
+  .glass-dark {
+    backdrop-filter: blur(4px); /* Even more reduced on mobile */
+    -webkit-backdrop-filter: blur(4px);
+  }
+  
+  .glow-blue,
+  .glow-purple,
+  .glow-cyan {
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.15); /* Minimal glow on mobile */
+  }
+}
+
+/* Container queries for better performance */
+@container (max-width: 768px) {
+  .complex-animation {
+    animation: none; /* Disable complex animations on small containers */
+  }
 }
