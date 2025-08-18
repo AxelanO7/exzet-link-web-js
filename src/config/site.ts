@@ -7,8 +7,8 @@ export const siteConfig = {
   creator: "@AxelanO7",
   keywords: [
     "Chief Technology Officer",
-    "Software Engineer",
     "Technology Leader",
+    "Software Engineer",
     "Jeremia Axelano",
   ],
 } as const;
