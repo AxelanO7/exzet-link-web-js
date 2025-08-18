@@ -49,10 +49,8 @@ export const techStack = [
 ] as const;
 
 export const roles = [
-  "CTO",
-  "Tech Enthusiast",
-  "Full Stack Developer",
+  "Chief Technology Officer",
+  "Technology Leader",
   "Software Engineer",
-  "System Architect",
-  "Innovation Leader",
+  "Full-Stack Developer",
 ] as const;

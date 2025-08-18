@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Jeremia Axelano | Tech Enthusiast",
+  name: "Jeremia Axelano | CTO & Tech Enthusiast",
   description:
     "CTO & Tech Enthusiast - Connecting innovation with execution. Explore my digital presence and portfolio.",
   url: "https://link.exzet.site",
