@@ -35,7 +35,7 @@ export const socialLinks = [
   },
   {
     name: "WhatsApp",
-    href: "https://wa.me/082210487700",
+    href: "https://wa.me/+6282210487700",
     icon: MessageCircleCode,
     description: "Contact me via WhatsApp",
     color: "from-green-400 to-green-500",

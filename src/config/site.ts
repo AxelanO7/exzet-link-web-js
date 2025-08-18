@@ -6,11 +6,9 @@ export const siteConfig = {
   ogImage: "https://link.exzet.site/og-image.png",
   creator: "@AxelanO7",
   keywords: [
-    "CTO",
-    "Tech Enthusiast",
-    "Software Developer",
+    "Chief Technology Officer",
+    "Software Engineer",
     "Technology Leader",
-    "Digital Innovation",
     "Jeremia Axelano",
   ],
 } as const;
