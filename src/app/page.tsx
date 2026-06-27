@@ -118,8 +118,8 @@ export default function HomePage() {
                 </span>
               </p>
             </div>
-            <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-md pt-4 font-mono">
-              // ponytail: client-focused builder. scalable architectures.
+            <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-md pt-4 font-light">
+              Turning complex systems into products people use — from Bali, for the world.
             </p>
           </BentoTile>
 
