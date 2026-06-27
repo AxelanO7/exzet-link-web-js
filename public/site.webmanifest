@@ -1,0 +1,14 @@
+{
+  "name": "Jeremia Axelano Mowisu Link",
+  "short_name": "Axelano Link",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ],
+  "theme_color": "#10b981",
+  "background_color": "#020617",
+  "display": "standalone"
+}
