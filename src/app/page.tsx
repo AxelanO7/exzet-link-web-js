@@ -8,7 +8,6 @@ import {
   Mail,
   MapPin,
   ArrowUpRight,
-  ExternalLink,
   Phone,
 } from "lucide-react";
 import { memo } from "react";
@@ -36,6 +35,21 @@ const tileVariants = {
   },
 };
 
+// Hardcoded GitHub contribution pattern (7 cols × 4 rows = 28 cells), intensity 0-3
+const contributionGrid = [
+  2, 0, 3, 1, 2, 3, 1,
+  0, 3, 2, 3, 0, 2, 3,
+  1, 2, 0, 2, 3, 1, 2,
+  3, 1, 3, 0, 2, 3, 2,
+];
+
+const intensityClass: Record<number, string> = {
+  0: "bg-slate-800",
+  1: "bg-emerald-900/60",
+  2: "bg-emerald-700/70",
+  3: "bg-emerald-500/80",
+};
+
 const BentoTile = memo(function BentoTile({
   children,
   className = "",
@@ -47,12 +61,12 @@ const BentoTile = memo(function BentoTile({
 }) {
   const baseClass = `
     relative overflow-hidden rounded-3xl p-6 md:p-8
-    bg-white/70 dark:bg-slate-900/50 backdrop-blur-md
+    bg-white/70 dark:bg-slate-900/70 backdrop-blur-md
     border border-slate-200 dark:border-slate-800/80
     transition-all duration-300 ease-out
     hover:border-emerald-500/30 dark:hover:border-emerald-500/20
-    hover:scale-[1.015] hover:shadow-[0_0_24px_rgba(16,185,129,0.08)]
-    group flex flex-col justify-between
+    hover:scale-[1.015] hover:shadow-[0_0_32px_rgba(16,185,129,0.12)]
+    group flex flex-col justify-between cursor-pointer
   `;
 
   if (href) {
@@ -79,7 +93,7 @@ const BentoTile = memo(function BentoTile({
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans selection:bg-emerald-500/20 selection:text-emerald-400">
-      {/* Background visual grain or ambient light */}
+      {/* Background ambient */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-[40%] -left-[20%] w-[80%] h-[80%] rounded-full bg-emerald-500/5 dark:bg-emerald-500/[0.02] blur-[120px]" />
         <div className="absolute -bottom-[40%] -right-[20%] w-[80%] h-[80%] rounded-full bg-emerald-500/5 dark:bg-emerald-500/[0.02] blur-[120px]" />
@@ -92,9 +106,11 @@ export default function HomePage() {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-3 gap-5"
         >
-          {/* Tile 1: About / Identity / Tagline */}
+          {/* Tile 1: Identity */}
           <BentoTile className="md:col-span-2 md:row-span-2 justify-between min-h-[300px]">
-            <div className="space-y-6">
+            {/* Subtle glow behind name */}
+            <div className="emerald-glow-bg absolute top-8 left-8 w-48 h-24 bg-emerald-500/5 blur-2xl rounded-full pointer-events-none" />
+            <div className="space-y-6 relative">
               <div className="flex items-center gap-4">
                 <img
                   src="/avatar.jpg"
@@ -123,7 +139,7 @@ export default function HomePage() {
             </p>
           </BentoTile>
 
-          {/* Tile 2: Building Guestlist (CTO role) */}
+          {/* Tile 2: CTO role */}
           <BentoTile className="md:col-span-1 justify-between min-h-[160px]">
             <div className="flex items-start justify-between">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
@@ -136,19 +152,22 @@ export default function HomePage() {
             </div>
             <div className="mt-4">
               <p className="text-xs font-mono uppercase tracking-wider text-slate-400">Current Role</p>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white mt-1">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mt-1">
                 CTO @ New Directions Success
               </h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+              <p className="text-sm font-semibold text-emerald-500 dark:text-emerald-400 mt-1">
                 Building Guestlist Ecosystem
               </p>
-              <p className="text-xs text-emerald-500 dark:text-emerald-400 mt-2 font-semibold">
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                Marketplace · Entertainment · Bali
+              </p>
+              <p className="text-xs text-emerald-500/70 dark:text-emerald-400/70 mt-2 font-mono">
                 Mar 2025 – Present
               </p>
             </div>
           </BentoTile>
 
-          {/* Tile 3: Freelance stats */}
+          {/* Tile 3: Experience */}
           <BentoTile className="md:col-span-1 justify-between min-h-[160px]">
             <div>
               <p className="text-xs font-mono uppercase tracking-wider text-slate-400">Experience</p>
@@ -175,7 +194,7 @@ export default function HomePage() {
             </div>
           </BentoTile>
 
-          {/* Tile 5: GitHub */}
+          {/* Tile 5: GitHub + contribution grid */}
           <BentoTile href="https://github.com/AxelanO7/" className="md:col-span-2 min-h-[120px]">
             <div className="flex justify-between items-start w-full">
               <div className="p-3 bg-slate-800 rounded-2xl text-white">
@@ -186,9 +205,20 @@ export default function HomePage() {
                 <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-emerald-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </div>
             </div>
-            <div className="mt-4">
-              <h3 className="text-lg font-bold">GitHub</h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Code repositories & open-source projects</p>
+            <div className="mt-3 flex items-end justify-between gap-4">
+              <div>
+                <h3 className="text-lg font-bold">GitHub</h3>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Code repositories & open-source</p>
+              </div>
+              {/* Contribution grid */}
+              <div className="grid grid-cols-7 gap-0.5 flex-shrink-0 opacity-80 group-hover:opacity-100 transition-opacity">
+                {contributionGrid.map((intensity, i) => (
+                  <div
+                    key={i}
+                    className={`w-2.5 h-2.5 rounded-sm ${intensityClass[intensity]}`}
+                  />
+                ))}
+              </div>
             </div>
           </BentoTile>
 
@@ -216,8 +246,13 @@ export default function HomePage() {
             </div>
           </BentoTile>
 
-          {/* Tile 7: Portfolio */}
-          <BentoTile href="https://portofolio.exzet.site/" className="md:col-span-2 min-h-[180px] justify-between bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent">
+          {/* Tile 7: Portfolio — with shimmer border */}
+          <BentoTile
+            href="https://portfolio.exzet.site/"
+            className="md:col-span-2 min-h-[180px] justify-between bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent"
+          >
+            {/* Shimmer border overlay on top edge */}
+            <div className="absolute top-0 left-0 right-0 h-[2px] shimmer-border rounded-t-3xl" />
             <div className="flex justify-between items-start w-full">
               <div className="p-3 bg-emerald-500/10 rounded-2xl text-emerald-600 dark:text-emerald-400">
                 <Globe className="w-6 h-6" />

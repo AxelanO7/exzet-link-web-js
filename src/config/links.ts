@@ -3,7 +3,7 @@ import { Github, Linkedin, Globe, Mail, MessageCircleCode } from "lucide-react";
 export const socialLinks = [
   {
     name: "Portfolio",
-    href: "https://portofolio.exzet.site/",
+    href: "https://portfolio.exzet.site/",
     icon: Globe,
     description: "Explore my projects and achievements",
     color: "from-blue-500 to-cyan-500",
