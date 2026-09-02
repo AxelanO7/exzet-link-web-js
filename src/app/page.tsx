@@ -248,7 +248,7 @@ export default function HomePage() {
 
           {/* Tile 7: Portfolio — with shimmer border */}
           <BentoTile
-            href="https://portfolio.exzet.site/"
+            href="https://portfolio.axelano.space/"
             className="md:col-span-2 min-h-[180px] justify-between bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent"
           >
             {/* Shimmer border overlay on top edge */}
