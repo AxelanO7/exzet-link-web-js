@@ -1,48 +1,42 @@
+/* Self-hosted fonts, latin only. No third-party font host. */
+@import "@fontsource/outfit/latin-600.css";
+@import "@fontsource/outfit/latin-700.css";
+@import "@fontsource/inter/latin-400.css";
+@import "@fontsource/inter/latin-500.css";
+@import "@fontsource/inter/latin-600.css";
+@import "@fontsource/jetbrains-mono/latin-400.css";
+@import "@fontsource/jetbrains-mono/latin-500.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
+  background: #07151d;
+  color-scheme: dark;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  font-feature-settings: "rlig" 1, "calt" 1;
+  background: #07151d;
+  color: #e9f1f6;
+  font-family: Inter, system-ui, sans-serif;
+  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
+
+h1, h2, h3, p { text-wrap: balance; }
+::selection { background: rgba(34, 211, 238, 0.28); color: #fff; }
+:focus-visible { outline: 2px solid #22d3ee; outline-offset: 2px; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@keyframes pulse-dot { 50% { opacity: 0.35; } }
+.live-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Accent name glow */
-@keyframes accent-glow-pulse {
-  0%, 100% { opacity: 0.04; transform: scale(1); }
-  50% { opacity: 0.08; transform: scale(1.05); }
-}
-
-.accent-glow-bg {
-  animation: accent-glow-pulse 4s ease-in-out infinite;
-}
-
-/* Portfolio-link tile shimmer border */
-@keyframes shimmer-border {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-.shimmer-border {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(201, 168, 117, 0.4) 50%,
-    transparent 100%
-  );
-  background-size: 200% auto;
-  animation: shimmer-border 2.5s linear infinite;
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }

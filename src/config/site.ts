@@ -1,16 +1,17 @@
 export const siteConfig = {
-  name: "Jeremia Axelano | I build platforms. Then I scale them.",
+  name: "Jeremia Axelano · Platforms, Web3 and AI agents",
   description:
-    "I build platforms. Then I scale them. Turning complex systems into products people use. Jeremia Axelano - CTO & Builder.",
+    "Jeremia Axelano is a CTO and full-stack engineer. A nightlife marketplace on web and mobile, 44 Web3 sites and a fleet of AI agents, built end to end.",
   url: "https://link.axelano.space",
+  portfolio: "https://portfolio.axelano.space",
   ogImage: "https://link.axelano.space/og-image.png",
   creator: "@AxelanO7",
   keywords: [
     "Jeremia Axelano",
     "CTO",
-    "Chief Technology Officer",
-    "Software Architect",
-    "Builder",
-    "Guestlist",
+    "Full-stack engineer",
+    "AI agents",
+    "Web3",
+    "Guestlist Ticket",
   ],
 } as const;

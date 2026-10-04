@@ -1,39 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { Providers } from "@/components/ui/providers";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
-  },
+  metadataBase: new URL(siteConfig.url),
+  title: { default: siteConfig.name, template: `%s | ${siteConfig.name}` },
   description: siteConfig.description,
   keywords: Array.from(siteConfig.keywords),
-  authors: [
-    {
-      name: "Jeremia Axelano",
-      url: "https://link.axelano.space",
-    },
-  ],
+  authors: [{ name: "Jeremia Axelano", url: siteConfig.portfolio }],
   creator: siteConfig.creator,
+  alternates: { canonical: siteConfig.url },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
-    siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
+    siteName: "Jeremia Axelano",
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
   },
   twitter: {
     card: "summary_large_image",
@@ -42,32 +26,20 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
     creator: siteConfig.creator,
   },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-  },
+  icons: { icon: "/favicon.ico", shortcut: "/favicon-16x16.png", apple: "/apple-touch-icon.png" },
   manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#050505",
+  themeColor: "#07151d",
+  width: "device-width",
+  initialScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
-      suppressHydrationWarning
-    >
-      <body className="font-sans antialiased">
-        <Providers>{children}</Providers>
-      </body>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }
