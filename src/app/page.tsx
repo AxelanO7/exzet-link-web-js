@@ -17,7 +17,7 @@ function Tile({
   delay?: number;
 }) {
   const base =
-    "rise group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/[0.09] bg-ink-surface p-6 transition-colors duration-200 md:p-8";
+    "rise group relative flex flex-col justify-between overflow-hidden rounded-[18px] border border-white/[0.09] bg-ink-surface p-6 transition-colors duration-200 md:p-8";
   const style = { animationDelay: `${delay}ms` };
   if (href) {
     return (
@@ -66,13 +66,26 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              <p className="pt-2 font-display text-[clamp(30px,6vw,46px)] font-bold leading-[1.05] tracking-tight">
-                Platforms, Web3 and <span className="text-cy">AI agents</span>, built end to end.
-              </p>
+              <div className="pt-2">
+                <p className="font-mono text-[11.5px] font-medium uppercase tracking-[0.14em] text-cy">CTO · Bali, UTC+8</p>
+                <p className="mt-3 font-display text-[clamp(30px,6vw,46px)] font-bold leading-[1.05] tracking-tight">
+                  Platforms, Web3 and <span className="text-gold">AI agents</span>, built end to end.
+                </p>
+              </div>
             </div>
-            <p className="max-w-md pt-6 text-sm text-mist md:text-base">
-              A nightlife marketplace on web and mobile, {WEB3} Web3 sites and a fleet of AI agents. One builder across the whole stack.
-            </p>
+            <div className="pt-6">
+              <p className="max-w-md text-sm text-mist md:text-base">
+                A nightlife marketplace on web and mobile, {WEB3} Web3 sites and a fleet of AI agents. One builder across the whole stack.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <a href={`${siteConfig.portfolio}/#cases`} target="_blank" rel="noopener noreferrer" className="btn-cta">
+                  See case studies
+                </a>
+                <a href="mailto:jeremia123.jm@gmail.com" className="btn-ghost">
+                  Start a conversation
+                </a>
+              </div>
+            </div>
           </Tile>
 
           {/* Role */}
