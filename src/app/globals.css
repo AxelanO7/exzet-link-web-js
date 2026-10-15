@@ -1,6 +1,7 @@
 /* Self-hosted fonts, latin only. No third-party font host. */
 @import "@fontsource/outfit/latin-600.css";
 @import "@fontsource/outfit/latin-700.css";
+@import "@fontsource/outfit/latin-800.css";
 @import "@fontsource/inter/latin-400.css";
 @import "@fontsource/inter/latin-500.css";
 @import "@fontsource/inter/latin-600.css";
@@ -11,16 +12,24 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: #050f16;
+  --line: rgba(150, 200, 225, 0.13);
+  --fg: #e8f1f6;
+  --cy: #2dd4e8;
+  --gold: #e9c27d;
+}
+
 html {
-  background: #07151d;
+  background: var(--bg);
   color-scheme: dark;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  background: #07151d;
-  color: #e9f1f6;
+  background: var(--bg);
+  color: var(--fg);
   font-family: Inter, system-ui, sans-serif;
   overflow-x: hidden;
   overflow-x: clip;
@@ -28,31 +37,55 @@ body {
 }
 
 h1, h2, h3, p { text-wrap: balance; }
-::selection { background: rgba(34, 211, 238, 0.28); color: #fff; }
-:focus-visible { outline: 2px solid #22d3ee; outline-offset: 2px; }
+::selection { background: rgba(45, 212, 232, 0.28); color: #fff; }
+:focus-visible { outline: 2px solid var(--cy); outline-offset: 3px; }
 
 .btn-cta {
   display: inline-flex; align-items: center; gap: 8px;
   border-radius: 999px; padding: 12px 22px;
   font: 600 14px Inter, sans-serif; color: #031018;
-  background: linear-gradient(180deg, #3fe0f5, #22d3ee);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 0 28px rgba(34, 211, 238, 0.25);
-  transition: transform 0.15s ease;
+  background: linear-gradient(180deg, #5fe3f4, #2dd4e8);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 10px 30px -10px rgba(45, 212, 232, 0.55);
+  transition: transform 0.2s ease;
 }
-.btn-cta:hover { transform: translateY(-1px); }
+.btn-cta:hover { transform: translateY(-2px); }
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.09); border-radius: 999px; padding: 12px 22px;
-  font: 500 14px Inter, sans-serif; color: #e9f1f6;
-  transition: border-color 0.15s ease;
+  border: 1px solid var(--line); border-radius: 999px; padding: 12px 22px;
+  font: 500 14px Inter, sans-serif; color: var(--fg);
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
-.btn-ghost:hover { border-color: rgba(255, 255, 255, 0.3); }
+.btn-ghost:hover { border-color: rgba(255, 255, 255, 0.32); transform: translateY(-2px); }
+
+.shine {
+  background: linear-gradient(100deg, var(--gold) 20%, #fbe3b0 38%, var(--gold) 56%, #d9a85c 80%);
+  background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shine 6s linear infinite;
+}
+@keyframes shine { to { background-position: -250% 0; } }
+
+/* rotating conic border (needs @property, Safari 16.4+; a plain line otherwise) */
+@property --ang { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.beam { position: relative; isolation: isolate; }
+.beam::before {
+  content: ""; position: absolute; inset: -1.5px; border-radius: inherit; padding: 1.5px; z-index: -1; pointer-events: none;
+  background: conic-gradient(from var(--ang), transparent 0 62%, var(--cy) 82%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: ang 3.6s linear infinite;
+}
+@keyframes ang { to { --ang: 360deg; } }
 
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 .rise { animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
 @keyframes pulse-dot { 50% { opacity: 0.35; } }
 .live-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
+
+@keyframes floaty { 50% { transform: translateY(-6px); } }
+.floaty { animation: floaty 6s ease-in-out infinite; }
+
+.logo-i { width: 1em; height: 1em; fill: currentColor; flex: none; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }

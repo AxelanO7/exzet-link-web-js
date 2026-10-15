@@ -1,14 +1,14 @@
 {
-  "name": "Jeremia Axelano Mowisu Link",
+  "name": "Jeremia Axelano",
   "short_name": "Axelano Link",
+  "description": "CTO in Bali. Platforms, Web3 and AI agents.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#050f16",
+  "background_color": "#050f16",
   "icons": [
-    {
-      "src": "/favicon.ico",
-      "sizes": "any",
-      "type": "image/x-icon"
-    }
-  ],
-  "theme_color": "#07151d",
-  "background_color": "#07151d",
-  "display": "standalone"
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
 }

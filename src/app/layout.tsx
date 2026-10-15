@@ -26,12 +26,11 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
     creator: siteConfig.creator,
   },
-  icons: { icon: "/favicon.ico", shortcut: "/favicon-16x16.png", apple: "/apple-touch-icon.png" },
   manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#07151d",
+  themeColor: "#050f16",
   width: "device-width",
   initialScale: 1,
 };

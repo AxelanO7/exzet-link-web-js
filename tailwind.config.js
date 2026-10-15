@@ -4,11 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Same midnight navy + cyan family as portfolio.axelano.space and Guestlist Ticket
-        ink: { DEFAULT: "#07151d", deep: "#031018", surface: "#0f1d25", raised: "#142129" },
-        cy: { DEFAULT: "#22d3ee", soft: "#7decf4" },
-        gold: "#d4af6a",
-        mist: "#a5b9cc",
+        // Same palette as portfolio.axelano.space: teal-navy ground, one cyan, gold for emphasis, coral for "live".
+        ink: { DEFAULT: "#050f16", deep: "#031018", surface: "#09151e", raised: "#0e1f2b" },
+        cy: { DEFAULT: "#2dd4e8", soft: "#7cebf7" },
+        gold: "#e9c27d",
+        coral: "#ff7b5c",
+        mint: "#4fe0bd",
+        mist: "#9bb1be",
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
