@@ -12,12 +12,12 @@ export const siteConfig = {
   keywords: ["Jeremia Axelano", "CTO", "Full-stack engineer", "AI agents", "Web3", "Guestlist Ticket"],
 } as const;
 
-/** Numbers use a "+" floor, checked against production on 2026-10-11. */
+/** Numbers use a "+" floor, checked against production on 2026-10-11. Visitors are site visits: 100,292 on 2026-10-24 (34,806 unique). */
 export const stats = {
   tools: 82,
   agents: 6,
   web3: 44,
-  visitors: "30,000+",
+  visitors: "100,000+",
   bookings: "700+",
   partners: "110+",
 } as const;

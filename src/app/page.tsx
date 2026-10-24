@@ -126,8 +126,8 @@ export default function HomePage() {
           <Tile className="min-h-[170px]" delay={120}>
             <div>
               <Label>Live in Bali</Label>
-              <p className="mt-2 font-display text-5xl font-extrabold leading-none tabular-nums">{stats.visitors}</p>
-              <p className="mt-1 text-sm text-mist">unique visitors tracked</p>
+              <p className="mt-2 font-display text-5xl font-extrabold leading-none tabular-nums md:text-4xl lg:text-[2.75rem]">{stats.visitors}</p>
+              <p className="mt-1 text-sm text-mist">site visits tracked</p>
             </div>
             <p className="mt-4 text-sm text-mist">
               <span className="font-semibold text-white">{stats.bookings}</span> booking requests a month ·{" "}
