@@ -4,7 +4,7 @@ export const siteConfig = {
     "Jeremia Axelano is a CTO and full-stack engineer in Bali. A nightlife marketplace on web and mobile, six AI agents in daily use and 44 Web3 sites, built end to end.",
   url: "https://link.axelano.space",
   portfolio: "https://portfolio.axelano.space",
-  ogImage: "https://link.axelano.space/og-image.png",
+  ogImage: "https://link.axelano.space/og-image.png?v=2",
   creator: "@AxelanO7",
   email: "jeremia123.jm@gmail.com",
   whatsapp: "https://wa.me/6282246034453",
