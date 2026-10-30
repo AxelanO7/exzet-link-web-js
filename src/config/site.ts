@@ -9,6 +9,7 @@ export const siteConfig = {
   email: "jeremia123.jm@gmail.com",
   whatsapp: "https://wa.me/6282246034453",
   whatsappLabel: "+62 822 4603 4453",
+  vcard: "/jeremia-axelano.vcf",
   keywords: ["Jeremia Axelano", "CTO", "Full-stack engineer", "AI agents", "Web3", "Guestlist Ticket"],
 } as const;
 

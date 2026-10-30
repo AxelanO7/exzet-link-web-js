@@ -57,10 +57,19 @@ h1, h2, h3, p { text-wrap: balance; }
   transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 .btn-ghost:active { border-color: rgba(255, 255, 255, 0.32); background-color: rgba(255, 255, 255, 0.07); }
+/* quiet utility actions (copy, save, QR): text and icon, no frame, still a 44px target */
+.btn-quiet {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 44px; border-radius: 999px; padding: 0 8px;
+  font: 400 13px Inter, sans-serif; color: var(--mist);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.btn-quiet:active { background-color: rgba(255, 255, 255, 0.07); color: #fff; }
 /* hover only where a pointer can hover, so a tap on a phone does not leave a stuck hover state */
 @media (hover: hover) {
   .btn-cta:hover { transform: translateY(-2px); }
   .btn-ghost:hover { border-color: rgba(255, 255, 255, 0.32); transform: translateY(-2px); }
+  .btn-quiet:hover { background-color: rgba(255, 255, 255, 0.06); color: #fff; }
 }
 
 .shine {

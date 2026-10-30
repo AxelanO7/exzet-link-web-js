@@ -1,6 +1,7 @@
 import { ArrowRight, ArrowUpRight, MapPin, Ticket } from "lucide-react";
 import { Brand, Mark } from "@/components/mark";
 import { Clock } from "@/components/clock";
+import { ContactExtras } from "@/components/contact-extras";
 import { siteConfig, stats } from "@/config/site";
 
 /** Screen readers only: external links open in a new tab. */
@@ -243,6 +244,7 @@ export default function HomePage() {
                 </a>
               </div>
             </div>
+            <ContactExtras email={siteConfig.email} vcf={siteConfig.vcard} qr="/qr.svg" qrAlt={`QR code that opens ${siteConfig.url.replace("https://", "")}`} />
           </Tile>
         </div>
 
