@@ -56,7 +56,7 @@ function IconBox({ children }: { children: React.ReactNode }) {
 function MiniPhone({ name, className = "" }: { name: string; className?: string }) {
   return (
     <div className={`absolute w-[92px] rounded-[18px] border-[3px] border-[#1b242c] bg-black shadow-[0_18px_30px_-12px_rgba(0,0,0,0.8)] ${className}`}>
-      <img src={`/phone/${name}-t.webp`} width={300} height={592} alt="" loading="lazy" decoding="async" className="block h-auto w-full rounded-[15px]" />
+      <img src={`/phone/${name}-t.webp`} srcSet={`/phone/${name}-t-160.webp 160w, /phone/${name}-t-240.webp 240w, /phone/${name}-t.webp 300w`} sizes="86px" width={300} height={592} alt="" loading="lazy" decoding="async" className="block h-auto w-full rounded-[15px]" />
     </div>
   );
 }
@@ -75,7 +75,7 @@ export default function HomePage() {
           <Tile className="min-h-[320px] md:col-span-2 md:row-span-2" delay={0}>
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <img src="/avatar.webp" alt="Portrait of Jeremia Axelano" width={72} height={72} className="h-[72px] w-[72px] rounded-2xl border border-white/15 object-cover" />
+                <img src="/avatar.webp" srcSet="/avatar-144.webp 144w, /avatar-216.webp 216w, /avatar.webp 360w" sizes="72px" alt="Portrait of Jeremia Axelano" width={72} height={72} className="h-[72px] w-[72px] rounded-2xl border border-white/15 object-cover" />
                 <div>
                   <h1 className="font-display text-2xl font-extrabold tracking-tight md:text-3xl">Jeremia Axelano</h1>
                   <p className="mt-1 flex items-center gap-1.5 text-sm text-mist">
