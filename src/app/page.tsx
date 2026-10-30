@@ -77,7 +77,7 @@ export default function HomePage() {
               <div className="flex items-center gap-4">
                 <img src="/avatar.webp" alt="Portrait of Jeremia Axelano" width={72} height={72} className="h-[72px] w-[72px] rounded-2xl border border-white/15 object-cover" />
                 <div>
-                  <h1 className="font-display text-2xl font-bold tracking-tight md:text-3xl">Jeremia Axelano</h1>
+                  <h1 className="font-display text-2xl font-extrabold tracking-tight md:text-3xl">Jeremia Axelano</h1>
                   <p className="mt-1 flex items-center gap-1.5 text-sm text-mist">
                     <MapPin aria-hidden="true" className="h-4 w-4 text-cy" />
                     Bali, Indonesia
@@ -85,7 +85,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="pt-2">
-                <p className="font-mono text-[11.5px] font-medium uppercase tracking-[0.14em] text-cy">CTO · Bali, UTC+8</p>
+                <p className="font-mono text-[11.5px] uppercase tracking-[0.14em] text-cy">CTO · Bali, UTC+8</p>
                 <p className="mt-3 font-display text-[clamp(30px,6vw,46px)] font-extrabold leading-[1.04] tracking-tight">
                   Platforms, Web3 and <span className="shine">AI agents</span>, built end to end.
                 </p>
@@ -124,7 +124,7 @@ export default function HomePage() {
             <div className="mt-4">
               <Label>Current role</Label>
               <h2 className="mt-1 font-display text-xl font-semibold leading-tight">CTO, New Directions Success</h2>
-              <p className="mt-1 text-sm font-medium text-cy">Building Guestlist Ticket</p>
+              <p className="mt-1 text-sm text-cy">Building Guestlist Ticket</p>
               <p className="mt-1 text-xs text-mist">Web and mobile, Bali to Las Vegas</p>
               <p className="mt-2 font-mono text-xs text-gold">Mar 2025 – Present</p>
               <Clock />

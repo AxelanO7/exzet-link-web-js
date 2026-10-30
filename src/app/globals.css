@@ -1,12 +1,9 @@
 /* Self-hosted fonts, latin only. No third-party font host. */
 @import "@fontsource/outfit/latin-600.css";
-@import "@fontsource/outfit/latin-700.css";
 @import "@fontsource/outfit/latin-800.css";
 @import "@fontsource/inter/latin-400.css";
-@import "@fontsource/inter/latin-500.css";
 @import "@fontsource/inter/latin-600.css";
 @import "@fontsource/jetbrains-mono/latin-400.css";
-@import "@fontsource/jetbrains-mono/latin-500.css";
 
 @tailwind base;
 @tailwind components;
@@ -53,7 +50,7 @@ h1, h2, h3, p { text-wrap: balance; }
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 8px;
   min-height: 44px; border: 1px solid var(--line); border-radius: 999px; padding: 0 22px;
-  font: 500 14px Inter, sans-serif; color: var(--fg);
+  font: 400 14px Inter, sans-serif; color: var(--fg);
   transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 .btn-ghost:active { border-color: rgba(255, 255, 255, 0.32); background-color: rgba(255, 255, 255, 0.07); }
