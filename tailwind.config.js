@@ -20,5 +20,7 @@ module.exports = {
     },
   },
   darkMode: "class",
+  // hover styles only where a pointer can hover: no stuck hover state after a tap on iOS/Android
+  future: { hoverOnlyWhenSupported: true },
   plugins: [],
 };

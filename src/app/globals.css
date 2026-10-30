@@ -18,6 +18,7 @@
   --fg: #e8f1f6;
   --cy: #2dd4e8;
   --gold: #e9c27d;
+  --mist: #9bb1be;
 }
 
 html {
@@ -42,20 +43,25 @@ h1, h2, h3, p { text-wrap: balance; }
 
 .btn-cta {
   display: inline-flex; align-items: center; gap: 8px;
-  border-radius: 999px; padding: 12px 22px;
+  min-height: 44px; border-radius: 999px; padding: 0 22px;
   font: 600 14px Inter, sans-serif; color: #031018;
   background: linear-gradient(180deg, #5fe3f4, #2dd4e8);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 10px 30px -10px rgba(45, 212, 232, 0.55);
   transition: transform 0.2s ease;
 }
-.btn-cta:hover { transform: translateY(-2px); }
+.btn-cta:active { transform: scale(0.98); }
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 8px;
-  border: 1px solid var(--line); border-radius: 999px; padding: 12px 22px;
+  min-height: 44px; border: 1px solid var(--line); border-radius: 999px; padding: 0 22px;
   font: 500 14px Inter, sans-serif; color: var(--fg);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
-.btn-ghost:hover { border-color: rgba(255, 255, 255, 0.32); transform: translateY(-2px); }
+.btn-ghost:active { border-color: rgba(255, 255, 255, 0.32); background-color: rgba(255, 255, 255, 0.07); }
+/* hover only where a pointer can hover, so a tap on a phone does not leave a stuck hover state */
+@media (hover: hover) {
+  .btn-cta:hover { transform: translateY(-2px); }
+  .btn-ghost:hover { border-color: rgba(255, 255, 255, 0.32); transform: translateY(-2px); }
+}
 
 .shine {
   background: linear-gradient(100deg, var(--gold) 20%, #fbe3b0 38%, var(--gold) 56%, #d9a85c 80%);

@@ -1,7 +1,12 @@
-import { ArrowUpRight, MapPin, Ticket } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin, Ticket } from "lucide-react";
 import { Brand, Mark } from "@/components/mark";
 import { Clock } from "@/components/clock";
 import { siteConfig, stats } from "@/config/site";
+
+/** Screen readers only: external links open in a new tab. */
+function NewTab() {
+  return <span className="sr-only"> (opens in a new tab)</span>;
+}
 
 function Tile({
   children,
@@ -20,8 +25,9 @@ function Tile({
   const style = { animationDelay: `${delay}ms` };
   if (href) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" style={style} className={`${base} hover:border-cy/40 ${className}`}>
+      <a href={href} target="_blank" rel="noopener noreferrer" style={style} className={`${base} hover:border-cy/40 active:border-cy/40 active:bg-ink-raised ${className}`}>
         {children}
+        <NewTab />
       </a>
     );
   }
@@ -37,7 +43,7 @@ function Label({ children }: { children: React.ReactNode }) {
 }
 
 function Arrow() {
-  return <ArrowUpRight className="h-5 w-5 text-white/40 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-cy" />;
+  return <ArrowUpRight aria-hidden="true" className="h-5 w-5 text-white/40 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-cy" />;
 }
 
 function IconBox({ children }: { children: React.ReactNode }) {
@@ -67,11 +73,11 @@ export default function HomePage() {
           <Tile className="min-h-[320px] md:col-span-2 md:row-span-2" delay={0}>
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <img src="/avatar.webp" alt="Jeremia Axelano" width={72} height={72} className="h-[72px] w-[72px] rounded-2xl border border-white/15 object-cover" />
+                <img src="/avatar.webp" alt="Portrait of Jeremia Axelano" width={72} height={72} className="h-[72px] w-[72px] rounded-2xl border border-white/15 object-cover" />
                 <div>
                   <h1 className="font-display text-2xl font-bold tracking-tight md:text-3xl">Jeremia Axelano</h1>
                   <p className="mt-1 flex items-center gap-1.5 text-sm text-mist">
-                    <MapPin className="h-4 w-4 text-cy" />
+                    <MapPin aria-hidden="true" className="h-4 w-4 text-cy" />
                     Bali, Indonesia
                   </p>
                 </div>
@@ -90,6 +96,7 @@ export default function HomePage() {
               <div className="mt-5 flex flex-wrap gap-3">
                 <a href={`${siteConfig.portfolio}/#cases`} target="_blank" rel="noopener noreferrer" className="btn-cta">
                   See case studies
+                  <NewTab />
                 </a>
                 <a href={`mailto:${siteConfig.email}`} className="btn-ghost">
                   Start a conversation
@@ -116,7 +123,7 @@ export default function HomePage() {
               <Label>Current role</Label>
               <h2 className="mt-1 font-display text-xl font-semibold leading-tight">CTO, New Directions Success</h2>
               <p className="mt-1 text-sm font-medium text-cy">Building Guestlist Ticket</p>
-              <p className="mt-1 text-xs text-mist">Web · Mobile · Bali to Las Vegas</p>
+              <p className="mt-1 text-xs text-mist">Web and mobile, Bali to Las Vegas</p>
               <p className="mt-2 font-mono text-xs text-gold">Mar 2025 – Present</p>
               <Clock />
             </div>
@@ -140,11 +147,11 @@ export default function HomePage() {
             <div className="relative z-10 flex w-full items-start justify-between">
               <Mark size={44} />
               <span className="flex items-center gap-1 text-sm font-semibold text-cy">
-                View portfolio <ArrowUpRight className="h-5 w-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+                View portfolio <ArrowUpRight aria-hidden="true" className="h-5 w-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
               </span>
             </div>
             <div className="relative z-10 mt-6 md:max-w-[58%]">
-              <h2 className="font-display text-2xl font-semibold leading-tight">Everything I built, in one place</h2>
+              <h2 className="font-display text-2xl font-semibold leading-tight">Everything I&nbsp;built, in one place</h2>
               <p className="mt-1 text-sm text-mist">Guestlist Ticket, AI agents, Web3 sites, client platforms and the {stats.tools}-tool arsenal.</p>
             </div>
             {/* phones sit below the text on a phone, and to the right on wider screens */}
@@ -162,7 +169,11 @@ export default function HomePage() {
               <Arrow />
             </div>
             <div>
-              <p className="font-display text-[44px] font-extrabold leading-none tracking-tight text-cy">328→70</p>
+              <p className="font-display text-[44px] font-extrabold leading-none tracking-tight text-cy">
+                328
+                <ArrowRight aria-hidden="true" strokeWidth={3} className="mx-1 inline-block h-[0.72em] w-[0.72em] align-[-0.04em]" />
+                <span className="sr-only"> to </span>70
+              </p>
               <p className="mt-2 text-sm text-mist">sitemap URLs, so search engines only see real pages</p>
               <p className="mt-3 font-mono text-[11px] text-gold">3 write-ups · problem, approach, result</p>
             </div>
@@ -172,13 +183,13 @@ export default function HomePage() {
           <Tile href="https://guestlistticket.com" className="min-h-[170px]" delay={300}>
             <div className="flex w-full items-start justify-between">
               <IconBox>
-                <Ticket className="h-6 w-6" />
+                <Ticket aria-hidden="true" className="h-6 w-6" />
               </IconBox>
               <Arrow />
             </div>
             <div className="mt-4">
-              <h3 className="font-display text-lg font-semibold">Guestlist Ticket</h3>
-              <p className="mt-1 text-xs text-mist">The marketplace I lead, live in Bali</p>
+              <h2 className="font-display text-lg font-semibold">Guestlist Ticket</h2>
+              <p className="mt-1 text-xs text-mist">The marketplace I lead</p>
             </div>
           </Tile>
 
@@ -191,7 +202,7 @@ export default function HomePage() {
               <Arrow />
             </div>
             <div className="mt-4">
-              <h3 className="font-display text-lg font-semibold">LinkedIn</h3>
+              <h2 className="font-display text-lg font-semibold">LinkedIn</h2>
               <p className="mt-1 text-xs text-mist">Career and updates</p>
             </div>
           </Tile>
@@ -207,7 +218,7 @@ export default function HomePage() {
               </span>
             </div>
             <div className="mt-4">
-              <h3 className="font-display text-lg font-semibold">GitHub</h3>
+              <h2 className="font-display text-lg font-semibold">GitHub</h2>
               <p className="mt-1 text-xs text-mist">70+ public repositories</p>
             </div>
           </Tile>
@@ -217,7 +228,7 @@ export default function HomePage() {
             <div className="flex flex-wrap items-end justify-between gap-6">
               <div>
                 <Label>Contact</Label>
-                <h3 className="mt-1 font-display text-lg font-semibold">Get in touch</h3>
+                <h2 className="mt-1 font-display text-lg font-semibold">Get in touch</h2>
                 <p className="mt-1 text-sm text-mist">Build a product, get architecture advice, or a part-time CTO.</p>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -228,13 +239,14 @@ export default function HomePage() {
                 <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-ghost">
                   <Brand id="whatsapp" className="h-4 w-4" />
                   {siteConfig.whatsappLabel}
+                  <NewTab />
                 </a>
               </div>
             </div>
           </Tile>
         </div>
 
-        <footer className="mt-8 flex items-center justify-center gap-3 font-mono text-xs text-mist">
+        <footer className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center font-mono text-xs text-mist">
           <Mark size={22} />
           <span>© 2026 Jeremia Axelano · Bali, UTC+8</span>
         </footer>
