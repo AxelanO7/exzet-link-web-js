@@ -2,6 +2,7 @@ import { ArrowRight, ArrowUpRight, MapPin, Ticket } from "lucide-react";
 import { Brand, Mark } from "@/components/mark";
 import { Clock } from "@/components/clock";
 import { ContactExtras } from "@/components/contact-extras";
+import { profileJsonLd } from "@/config/jsonld";
 import { siteConfig, stats } from "@/config/site";
 
 /** Screen readers only: external links open in a new tab. */
@@ -181,7 +182,7 @@ export default function HomePage() {
           </Tile>
 
           {/* Guestlist Ticket */}
-          <Tile href="https://guestlistticket.com" className="min-h-[170px]" delay={300}>
+          <Tile href={siteConfig.guestlist} className="min-h-[170px]" delay={300}>
             <div className="flex w-full items-start justify-between">
               <IconBox>
                 <Ticket aria-hidden="true" className="h-6 w-6" />
@@ -195,7 +196,7 @@ export default function HomePage() {
           </Tile>
 
           {/* LinkedIn */}
-          <Tile href="https://www.linkedin.com/in/jeremia-axelano/" className="min-h-[170px]" delay={360}>
+          <Tile href={siteConfig.linkedin} className="min-h-[170px]" delay={360}>
             <div className="flex w-full items-start justify-between">
               <IconBox>
                 <Brand id="linkedin" />
@@ -209,7 +210,7 @@ export default function HomePage() {
           </Tile>
 
           {/* GitHub */}
-          <Tile href="https://github.com/AxelanO7/" className="min-h-[170px]" delay={420}>
+          <Tile href={siteConfig.github} className="min-h-[170px]" delay={420}>
             <div className="flex w-full items-start justify-between">
               <IconBox>
                 <Brand id="github" />
@@ -244,7 +245,7 @@ export default function HomePage() {
                 </a>
               </div>
             </div>
-            <ContactExtras email={siteConfig.email} vcf={siteConfig.vcard} qr="/qr.svg" qrAlt={`QR code that opens ${siteConfig.url.replace("https://", "")}`} />
+            <ContactExtras email={siteConfig.email} vcf={siteConfig.vcard} qr="/qr.svg" qrAlt={`QR code that opens ${siteConfig.url.replace("https://", "").replace(/\/$/, "")}`} />
           </Tile>
         </div>
 
@@ -253,6 +254,7 @@ export default function HomePage() {
           <span>© 2026 Jeremia Axelano · Bali, UTC+8</span>
         </footer>
       </main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd).replace(/</g, "\\u003c") }} />
     </div>
   );
 }
