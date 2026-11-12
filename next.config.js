@@ -13,6 +13,11 @@ const nextConfig = {
         ],
       },
       {
+        // fonts are versioned by file name (-v1): safe to cache for a year
+        source: "/fonts/:file*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      },
+      {
         // contact card: iOS opens "Add contact" for text/vcard served inline; other browsers download it. Not for search results.
         source: "/jeremia-axelano.vcf",
         headers: [

@@ -38,9 +38,17 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+/** Fonts used above the fold, fetched in parallel with the CSS instead of after it. */
+const PRELOAD_FONTS = ["outfit-800-v1", "inter-400-v1", "outfit-600-v1", "inter-600-v1", "jetbrains-mono-400-v1"];
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        {PRELOAD_FONTS.map((f) => (
+          <link key={f} rel="preload" href={`/fonts/${f}.woff2`} as="font" type="font/woff2" crossOrigin="anonymous" />
+        ))}
+      </head>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

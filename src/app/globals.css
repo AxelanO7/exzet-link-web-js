@@ -1,9 +1,12 @@
-/* Self-hosted fonts, latin only. No third-party font host. */
-@import "@fontsource/outfit/latin-600.css";
-@import "@fontsource/outfit/latin-800.css";
-@import "@fontsource/inter/latin-400.css";
-@import "@fontsource/inter/latin-600.css";
-@import "@fontsource/jetbrains-mono/latin-400.css";
+/*
+ * Self-hosted fonts, no third-party host. Five files in /public/fonts: Basic Latin plus typographic punctuation, subset from
+ * the @fontsource latin files (SIL OFL). Any other character falls back to the system font. Notes in public/fonts/README.txt.
+ */
+@font-face { font-family: Outfit; font-style: normal; font-weight: 600; font-display: swap; src: url(/fonts/outfit-600-v1.woff2) format("woff2"); }
+@font-face { font-family: Outfit; font-style: normal; font-weight: 800; font-display: swap; src: url(/fonts/outfit-800-v1.woff2) format("woff2"); }
+@font-face { font-family: Inter; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/inter-400-v1.woff2) format("woff2"); }
+@font-face { font-family: Inter; font-style: normal; font-weight: 600; font-display: swap; src: url(/fonts/inter-600-v1.woff2) format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/jetbrains-mono-400-v1.woff2) format("woff2"); }
 
 @tailwind base;
 @tailwind components;
