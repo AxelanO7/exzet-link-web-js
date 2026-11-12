@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
-const OG_ALT = "Jeremia Axelano, CTO. Platforms, Web3 and AI agents, built end to end.";
+const OG_ALT = "Jeremia Axelano, Co-Founder and CTO. Platforms, Web3 and AI agents, built end to end.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

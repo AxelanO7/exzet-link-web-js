@@ -27,10 +27,10 @@ export const profileJsonLd = {
       "@type": "Person",
       "@id": PERSON_ID,
       name: "Jeremia Axelano",
-      jobTitle: "Chief Technology Officer",
+      jobTitle: "Co-Founder and Chief Technology Officer",
       url: siteConfig.portfolio,
       image: `${HOME}avatar.webp`,
-      worksFor: { "@type": "Organization", name: "Guestlist Ticket", url: siteConfig.guestlist },
+      worksFor: { "@type": "Organization", name: "Guestlist Ticket", legalName: "PT New Directions Success", url: siteConfig.guestlist },
       sameAs: [siteConfig.linkedin, siteConfig.github, siteConfig.portfolio],
     },
     {

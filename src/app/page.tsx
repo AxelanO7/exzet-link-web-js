@@ -63,7 +63,7 @@ function MiniPhone({ name, className = "" }: { name: string; className?: string 
 
 const CHIPS = [
   { t: "Bali", s: "Live", on: true },
-  { t: "Las Vegas", s: "Oct 2026", on: false },
+  { t: "US venue pages", s: "Live", on: true },
 ] as const;
 
 export default function HomePage() {
@@ -85,7 +85,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="pt-2">
-                <p className="font-mono text-[11.5px] uppercase tracking-[0.14em] text-cy">CTO · Bali, UTC+8</p>
+                <p className="font-mono text-[11.5px] uppercase tracking-[0.14em] text-cy">Co-Founder & CTO · Bali, UTC+8</p>
                 <p className="mt-3 font-display text-[clamp(30px,6vw,46px)] font-extrabold leading-[1.04] tracking-tight">
                   Platforms, Web3 and <span className="shine">AI agents</span>, built end to end.
                 </p>
@@ -123,9 +123,9 @@ export default function HomePage() {
             </span>
             <div className="mt-4">
               <Label>Current role</Label>
-              <h2 className="mt-1 font-display text-xl font-semibold leading-tight">CTO, New Directions Success</h2>
+              <h2 className="mt-1 font-display text-xl font-semibold leading-tight">Co-Founder & CTO, New Directions Success</h2>
               <p className="mt-1 text-sm text-cy">Building Guestlist Ticket</p>
-              <p className="mt-1 text-xs text-mist">Web and mobile, Bali to Las Vegas</p>
+              <p className="mt-1 text-xs text-mist">Live in Bali, venue pages in four US cities</p>
               <p className="mt-2 font-mono text-xs text-gold">Mar 2025 – Present</p>
               <Clock />
             </div>
@@ -134,12 +134,12 @@ export default function HomePage() {
           {/* Proof */}
           <Tile className="min-h-[170px]" delay={120}>
             <div>
-              <Label>Live in Bali</Label>
+              <Label>In production</Label>
               <p className="mt-2 font-display text-5xl font-extrabold leading-none tabular-nums md:text-4xl lg:text-[2.75rem]">{stats.visitors}</p>
               <p className="mt-1 text-sm text-mist">site visits tracked</p>
             </div>
             <p className="mt-4 text-sm text-mist">
-              <span className="font-semibold text-white">{stats.bookings}</span> booking requests a month ·{" "}
+              <span className="font-semibold text-white">{stats.bookings}</span> booking requests in a month ·{" "}
               <span className="font-semibold text-white">{stats.partners}</span> partners
             </p>
           </Tile>
@@ -171,12 +171,14 @@ export default function HomePage() {
               <Arrow />
             </div>
             <div>
-              <p className="font-display text-[44px] font-extrabold leading-none tracking-tight text-cy">
+              <p className="font-display text-[34px] font-extrabold leading-none tracking-tight text-cy sm:text-[40px] md:text-[32px] lg:text-[36px]">
                 328
-                <ArrowRight aria-hidden="true" strokeWidth={3} className="mx-1 inline-block h-[0.72em] w-[0.72em] align-[-0.04em]" />
+                <ArrowRight aria-hidden="true" strokeWidth={3} className="mx-0.5 inline-block h-[0.66em] w-[0.66em] align-[-0.04em]" />
                 <span className="sr-only"> to </span>70
+                <ArrowRight aria-hidden="true" strokeWidth={3} className="mx-0.5 inline-block h-[0.66em] w-[0.66em] align-[-0.04em]" />
+                <span className="sr-only"> to </span>159
               </p>
-              <p className="mt-2 text-sm text-mist">sitemap URLs, so search engines only see real pages</p>
+              <p className="mt-2 text-sm text-mist">sitemap URLs: redirects out, venue and city pages in</p>
               <p className="mt-3 font-mono text-[11px] text-gold">3 write-ups · problem, approach, result</p>
             </div>
           </Tile>
@@ -231,7 +233,7 @@ export default function HomePage() {
               <div>
                 <Label>Contact</Label>
                 <h2 className="mt-1 font-display text-lg font-semibold">Get in touch</h2>
-                <p className="mt-1 text-sm text-mist">Build a product, get architecture advice, or a part-time CTO.</p>
+                <p className="mt-1 text-sm text-mist">Build a product, get architecture advice, or a technical partner for your team.</p>
               </div>
               <div className="flex flex-wrap gap-3">
                 <a href={`mailto:${siteConfig.email}`} className="btn-cta">
