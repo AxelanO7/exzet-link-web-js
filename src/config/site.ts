@@ -22,7 +22,7 @@ export const siteConfig = {
  * Visitors are site visits, never "unique visitors".
  */
 export const stats = {
-  tools: 82,
+  tools: 98,
   agents: 6,
   web3: 44,
   visitors: "110,000+",
